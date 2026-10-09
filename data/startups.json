@@ -1,0 +1,206 @@
+{
+  "fetched_at": "2026-10-09T13:06:26+00:00",
+  "total_matching": 2310,
+  "count": 10,
+  "startups": [
+    {
+      "name": "Neume",
+      "slug": "neume",
+      "website": "https://www.neume.io",
+      "category": "Artificial Intelligence",
+      "description": "Make songs with AI in seconds!",
+      "mrr_usd": 11.51,
+      "revenue_30d_usd": 20.25,
+      "asking_price_usd": 300.0,
+      "multiple": 1.2346532599784676,
+      "growth_30d": 20.663846016328016,
+      "on_sale": true,
+      "trustmrr_url": "https://trustmrr.com/startup/neume",
+      "opportunity_score": 88,
+      "score_highlights": [
+        "Highly attractive multiple (<= 2.5x)",
+        "High 30-day growth (>= 20%)",
+        "Early revenue (> $0 MRR)"
+      ]
+    },
+    {
+      "name": "CodeHype.ai - Product Hunt Alternative to Launch Your SaaS & Get Discovered by Google & AI Search.",
+      "slug": "codehype",
+      "website": "https://codehype.ai",
+      "category": "SaaS",
+      "description": "CodeHype is a SaaS and AI product launch platform built to help founders get discovered, drive traffic, and reach early users. Launch your product, get listed in front of builders and founders, and in",
+      "mrr_usd": 5.86,
+      "revenue_30d_usd": 16.54,
+      "asking_price_usd": 450.0,
+      "multiple": 2.2673610984919232,
+      "growth_30d": 2874.2012942627466,
+      "on_sale": true,
+      "trustmrr_url": "https://trustmrr.com/startup/codehype",
+      "opportunity_score": 88,
+      "score_highlights": [
+        "Highly attractive multiple (<= 2.5x)",
+        "High 30-day growth (>= 20%)",
+        "Early revenue (> $0 MRR)"
+      ]
+    },
+    {
+      "name": "AppAlchemy",
+      "slug": "appalchemy",
+      "website": "https://appalchemy.ai",
+      "category": "Artificial Intelligence",
+      "description": "AppAlchemy is an AI powered no code builder that turns a text description into a working iOS and Android app. Users describe their idea and iterate in chat without writing code. It also includes the o",
+      "mrr_usd": 56.98,
+      "revenue_30d_usd": 59.8,
+      "asking_price_usd": 275.0,
+      "multiple": 0.38318981133127106,
+      "growth_30d": 5.1102510835292865,
+      "on_sale": true,
+      "trustmrr_url": "https://trustmrr.com/startup/appalchemy",
+      "opportunity_score": 78,
+      "score_highlights": [
+        "Highly attractive multiple (<= 2.5x)",
+        "Solid 30-day growth (5% - 20%)",
+        "Early revenue (> $0 MRR)"
+      ]
+    },
+    {
+      "name": "White Glove Content",
+      "slug": "white-glove-content",
+      "website": "https://www.whiteglovecontent.com",
+      "category": "Content Creation",
+      "description": "We provide a subscription-based content production service for creators and brands who want to publish faceless video content across online social media platforms, including YouTube, TikTok, Instagram",
+      "mrr_usd": 691.95,
+      "revenue_30d_usd": 743.11,
+      "asking_price_usd": 25000.0,
+      "multiple": 2.8035242228305646,
+      "growth_30d": 25.797146444516528,
+      "on_sale": true,
+      "trustmrr_url": "https://trustmrr.com/startup/white-glove-content",
+      "opportunity_score": 78,
+      "score_highlights": [
+        "Fair valuation multiple (2.5x - 4.0x)",
+        "High 30-day growth (>= 20%)",
+        "Early revenue (> $0 MRR)"
+      ]
+    },
+    {
+      "name": "VoiceBrief",
+      "slug": "voicebrief",
+      "website": "https://voicebrief.io",
+      "category": "Education",
+      "description": "VoiceBrief is a SaaS learning platform that turns PDFs, web pages, and text into original-document audio, synced read-along, summaries, quizzes, flashcards, and slides. Customers discover VoiceBrief a",
+      "mrr_usd": 1.65,
+      "revenue_30d_usd": 3.04,
+      "asking_price_usd": 120.0,
+      "multiple": 3.2899065666535074,
+      "growth_30d": 61.88751597784409,
+      "on_sale": true,
+      "trustmrr_url": "https://trustmrr.com/startup/voicebrief",
+      "opportunity_score": 78,
+      "score_highlights": [
+        "Fair valuation multiple (2.5x - 4.0x)",
+        "High 30-day growth (>= 20%)",
+        "Early revenue (> $0 MRR)"
+      ]
+    },
+    {
+      "name": "Anonymous startup",
+      "slug": "ai-website-builder",
+      "website": null,
+      "category": "No-Code",
+      "description": "A mature, self-service AI website building platform that enables entrepreneurs, small business owners, and agencies to create and publish professional websites without technical expertise. Users can g",
+      "mrr_usd": 152.19,
+      "revenue_30d_usd": 154.63,
+      "asking_price_usd": 1300.0,
+      "multiple": 0.7006142555046684,
+      "growth_30d": 5.0369295187924115,
+      "on_sale": true,
+      "trustmrr_url": "https://trustmrr.com/startup/ai-website-builder",
+      "opportunity_score": 73,
+      "score_highlights": [
+        "Highly attractive multiple (<= 2.5x)",
+        "Solid 30-day growth (5% - 20%)",
+        "Early revenue (> $0 MRR)"
+      ]
+    },
+    {
+      "name": "UpLinked B.V.",
+      "slug": "uplinked-b-v",
+      "website": "https://www.uplinked.app",
+      "category": "Marketing",
+      "description": "UpLinked is an AI web app for B2B coaches, consultants and agencies, with a live iOS app and Android in review. It analyses your LinkedIn profile, business, offer and goals, turns that into a 12-week",
+      "mrr_usd": 28.15,
+      "revenue_30d_usd": 22.16,
+      "asking_price_usd": 190.0,
+      "multiple": 0.7146371240164964,
+      "growth_30d": -29.638381981402496,
+      "on_sale": true,
+      "trustmrr_url": "https://trustmrr.com/startup/uplinked-b-v",
+      "opportunity_score": 58,
+      "score_highlights": [
+        "Highly attractive multiple (<= 2.5x)",
+        "Declining 30-day growth",
+        "Early revenue (> $0 MRR)"
+      ]
+    },
+    {
+      "name": "Trade Hunterr",
+      "slug": "trade-hunterr",
+      "website": "https://apps.apple.com/us/app/trade-hunterr/id6787424774?uo=4",
+      "category": "Artificial Intelligence",
+      "description": "Trade Hunterr is an AI-powered stock chart analysis app designed to help traders understand charts faster and turn them into structured trade setups. Users can upload a stock chart image and receive A",
+      "mrr_usd": 10.5,
+      "revenue_30d_usd": 19.9,
+      "asking_price_usd": 170.0,
+      "multiple": 0.711992977236328,
+      "growth_30d": -19.21952645425311,
+      "on_sale": true,
+      "trustmrr_url": "https://trustmrr.com/startup/trade-hunterr",
+      "opportunity_score": 58,
+      "score_highlights": [
+        "Highly attractive multiple (<= 2.5x)",
+        "Declining 30-day growth",
+        "Early revenue (> $0 MRR)"
+      ]
+    },
+    {
+      "name": "Vid.AI",
+      "slug": "vidai-llc",
+      "website": "https://vid.ai",
+      "category": "Artificial Intelligence",
+      "description": "Turn any idea or script into ready-to-post videos that get views. AI generates voiceovers, visuals, and edits – all in minutes, no skills needed.",
+      "mrr_usd": 487.18,
+      "revenue_30d_usd": 391.7,
+      "asking_price_usd": 15000.0,
+      "multiple": 3.191238136572227,
+      "growth_30d": -18.92492984281229,
+      "on_sale": true,
+      "trustmrr_url": "https://trustmrr.com/startup/vidai-llc",
+      "opportunity_score": 48,
+      "score_highlights": [
+        "Fair valuation multiple (2.5x - 4.0x)",
+        "Declining 30-day growth",
+        "Early revenue (> $0 MRR)"
+      ]
+    },
+    {
+      "name": "Embed Notion Pages",
+      "slug": "embed-notion-pages",
+      "website": "https://www.embednotionpages.com",
+      "category": null,
+      "description": null,
+      "mrr_usd": 14.01,
+      "revenue_30d_usd": 11.12,
+      "asking_price_usd": 299.0,
+      "multiple": null,
+      "growth_30d": null,
+      "on_sale": true,
+      "trustmrr_url": "https://trustmrr.com/startup/embed-notion-pages",
+      "opportunity_score": 33,
+      "score_highlights": [
+        "Stable revenue (0% - 5%)",
+        "Early revenue (> $0 MRR)"
+      ]
+    }
+  ]
+}

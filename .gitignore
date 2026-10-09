@@ -1,0 +1,10 @@
+# Python artifacts
+__pycache__/
+*.pyc
+
+# Local environments
+venv/
+.venv/
+
+# Environment variables & keys
+.env

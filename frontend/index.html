@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SaaS Acquisition Scout</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎯 SaaS Acquisition Scout</h1>
+      <p class="subtitle">Scored opportunities fetched from TrustMRR</p>
+      <div id="meta-info" class="meta-info">Loading metadata...</div>
+    </header>
+
+    <!-- Controls Section -->
+    <section class="controls">
+      <input 
+        type="text" 
+        id="search-input" 
+        placeholder="Search startups, categories, or keywords..." 
+      />
+      
+      <select id="category-select">
+        <option value="ALL">All Categories</option>
+      </select>
+
+      <button id="reset-btn" class="btn-reset">Reset Filters</button>
+    </section>
+
+    <main>
+      <div id="startup-grid" class="grid">
+        <!-- Startup cards render dynamically here -->
+      </div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
