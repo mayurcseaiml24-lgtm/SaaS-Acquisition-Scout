@@ -8,3 +8,5 @@ venv/
 
 # Environment variables & keys
 .env
+.vercel
+.env*
