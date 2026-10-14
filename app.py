@@ -46,46 +46,57 @@ def calculate_opportunity_score(startup_data):
     asking_price = startup_data.get("asking_price_usd") or 0
     multiple = startup_data.get("multiple")
     growth_30d = startup_data.get("growth_30d") or 0
+    lifetime_revenue = startup_data.get("lifetime_revenue_usd") or 0
 
+    # Lifetime Revenue Scaling
+    if lifetime_revenue >= 1000000:
+        score += 30
+        reasons.append("Massive lifetime revenue ($1M+)")
+    elif lifetime_revenue >= 100000:
+        score += 20
+        reasons.append("Strong lifetime revenue ($100k+)")
+    elif lifetime_revenue >= 10000:
+        score += 10
+        reasons.append("Proven lifetime revenue ($10k+)")
+
+    # Multiple
     if multiple is not None and multiple > 0:
         if multiple <= 2.5:
-            score += 35
+            score += 25
             reasons.append("Highly attractive multiple (<= 2.5x)")
         elif multiple <= 4.0:
-            score += 25
+            score += 18
             reasons.append("Fair valuation multiple (2.5x - 4.0x)")
         elif multiple <= 6.0:
-            score += 10
+            score += 8
             reasons.append("Standard growth multiple (4.0x - 6.0x)")
         else:
             reasons.append("High valuation multiple (> 6.0x)")
 
+    # 30-Day Growth
     if growth_30d >= 20:
-        score += 30
+        score += 20
         reasons.append("High 30-day growth (>= 20%)")
     elif growth_30d >= 5:
-        score += 20
+        score += 12
         reasons.append("Solid 30-day growth (5% - 20%)")
     elif growth_30d >= 0:
-        score += 10
+        score += 5
         reasons.append("Stable revenue (0% - 5%)")
-    else:
-        reasons.append("Declining 30-day growth")
 
+    # MRR
     if mrr >= 5000:
-        score += 20
+        score += 15
         reasons.append("Established MRR ($5k+)")
     elif mrr >= 1000:
-        score += 15
+        score += 10
         reasons.append("Proven traction ($1k - $5k MRR)")
     elif mrr > 0:
-        score += 8
+        score += 5
         reasons.append("Early revenue (> $0 MRR)")
-    else:
-        reasons.append("Pre-revenue / $0 MRR")
 
     if asking_price > 0:
-        score += 10
+        score += 5
     if startup_data.get("website"):
         score += 5
 
@@ -93,14 +104,12 @@ def calculate_opportunity_score(startup_data):
 
 @app.route("/favicon.ico")
 def favicon():
-    # Serves favicon.ico directly from project root
     root_dir = os.path.dirname(os.path.abspath(__file__))
     return send_from_directory(root_dir, "favicon.ico", mimetype="image/vnd.microsoft.icon")
 
 @app.route("/", defaults={"path": ""})
 @app.route("/<path:path>")
 def serve_frontend(path):
-    # Serves app.js, style.css, or index.html from the frontend/ folder
     if path != "" and os.path.exists(os.path.join(app.static_folder, path)):
         return send_from_directory(app.static_folder, path)
     return send_from_directory(app.static_folder, "index.html")
@@ -112,7 +121,7 @@ def fetch_startups_api():
         return jsonify({"error": "API key not configured"}), 500
 
     headers = {"Authorization": f"Bearer {api_key}"}
-    params = {"onSale": "true", "sort": "best-deal", "limit": 10}
+    params = {"onSale": "true", "sort": "best-deal", "limit": 20}
 
     try:
         response = requests.get(API_URL, headers=headers, params=params, timeout=20)
@@ -122,7 +131,7 @@ def fetch_startups_api():
         return jsonify({"error": str(error)}), 500
 
     raw_startups = result.get("data", [])
-    processed_startups = []
+    all_processed = []
 
     for startup in raw_startups:
         revenue = startup.get("revenue") or {}
@@ -136,9 +145,10 @@ def fetch_startups_api():
             "description": startup.get("description"),
             "mrr_usd": to_usd(revenue.get("mrr")),
             "revenue_30d_usd": to_usd(revenue.get("last30Days")),
+            "lifetime_revenue_usd": to_usd(revenue.get("total") or revenue.get("lifetime")),
             "asking_price_usd": to_usd(startup.get("askingPrice")),
             "multiple": startup.get("multiple"),
-            "growth_30d": startup.get("growth30d"),
+            "growth_30d": startup.get("growth30d") or 0,
             "on_sale": startup.get("onSale"),
             "trustmrr_url": f"https://trustmrr.com/startup/{slug}" if slug else None,
         }
@@ -151,13 +161,17 @@ def fetch_startups_api():
         item["target_buyers"] = buyer_research["target_buyers"]
         item["outreach_angle"] = buyer_research["outreach_angle"]
 
-        processed_startups.append(item)
+        all_processed.append(item)
 
-    processed_startups.sort(key=lambda x: x["opportunity_score"], reverse=True)
+    # List 1: Rapid Short-Term Growth (Sorted by 30d growth)
+    rapid_growth_list = sorted(all_processed, key=lambda x: x["growth_30d"], reverse=True)
+
+    # List 2: All-Time Peak / Lifetime Revenue Giants (Sorted by lifetime revenue)
+    all_time_peak_list = sorted(all_processed, key=lambda x: (x.get("lifetime_revenue_usd") or 0), reverse=True)
 
     return jsonify({
-        "count": len(processed_startups),
-        "startups": processed_startups
+        "rapid_growth": rapid_growth_list[:10],
+        "all_time_peak": all_time_peak_list[:10]
     })
 
 if __name__ == "__main__":
