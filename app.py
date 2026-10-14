@@ -91,9 +91,19 @@ def calculate_opportunity_score(startup_data):
 
     return {"score": min(score, 100), "highlights": reasons}
 
-@app.route("/")
-def serve_frontend():
-    return send_from_directory("frontend", "index.html")
+@app.route("/favicon.ico")
+def favicon():
+    # Serves favicon.ico directly from project root
+    root_dir = os.path.dirname(os.path.abspath(__file__))
+    return send_from_directory(root_dir, "favicon.ico", mimetype="image/vnd.microsoft.icon")
+
+@app.route("/", defaults={"path": ""})
+@app.route("/<path:path>")
+def serve_frontend(path):
+    # Serves app.js, style.css, or index.html from the frontend/ folder
+    if path != "" and os.path.exists(os.path.join(app.static_folder, path)):
+        return send_from_directory(app.static_folder, path)
+    return send_from_directory(app.static_folder, "index.html")
 
 @app.route("/api/startups")
 def fetch_startups_api():
